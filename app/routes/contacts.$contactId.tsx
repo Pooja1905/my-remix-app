@@ -4,6 +4,7 @@ import { Form, useLoaderData, useFetcher } from "@remix-run/react";
 import { getContact, updateContact} from "~/data";
 import type { ContactRecord } from "~/data";
 import invariant from "tiny-invariant";
+import {Button} from "@mantine/core";
 
 
 export const loader = async ({
@@ -68,7 +69,7 @@ export default function Contact() {
 
                 <div>
                     <Form action="edit">
-                        <button type="submit">Edit</button>
+                        <Button type="submit">Edit</Button>
                     </Form>
 
                     <Form
@@ -83,7 +84,7 @@ export default function Contact() {
                             }
                         }}
                     >
-                        <button type="submit">Delete</button>
+                        <Button type="submit">Delete</Button>
                     </Form>
                 </div>
             </div>
@@ -99,7 +100,7 @@ const Favorite: FunctionComponent<{
     
     return (
         <fetcher.Form method="post">
-            <button
+            <Button
                 aria-label={
                     favorite
                         ? "Remove from favorites"
@@ -107,9 +108,10 @@ const Favorite: FunctionComponent<{
                 }
                 name="favorite"
                 value={favorite ? "false" : "true"}
+                variant="transparent"
             >
                 {favorite ? "★" : "☆"}
-            </button>
+            </Button>
         </fetcher.Form>
     );
 };

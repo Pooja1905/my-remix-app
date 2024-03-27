@@ -4,6 +4,7 @@ import {Form, useLoaderData, useNavigate} from "@remix-run/react";
 import invariant from "tiny-invariant";
 
 import {updateContact, getContact} from "~/data";
+import {Button} from "@mantine/core";
 
 export const loader = async ({
                                  params,
@@ -78,10 +79,10 @@ export default function EditContact() {
                 />
             </label>
             <p>
-                <button type="submit">Save</button>
-                <button type="button" onClick={() => {
+                <Button type="submit">Save</Button>
+                <Button type="button" onClick={() => {
                     navigate(-1)
-                }}>Cancel</button>
+                }}>Cancel</Button>
             </p>
         </Form>
     );
