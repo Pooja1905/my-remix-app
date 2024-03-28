@@ -1,0 +1,48 @@
+﻿
+.contact {
+    max-width: 40rem;
+    display: flex;
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    h1 + p {
+        margin: 0;
+    }
+
+    h1 + p + p {
+        white-space: break-spaces;
+    }
+
+    h1:focus {
+        outline: none;
+        color: hsl(224, 98%, 58%);
+    }
+    
+    a[href*="twitter"] {
+        display: flex;
+        font-size: 1.5rem;
+        color: #3992ff;
+        text-decoration: none;
+    }
+
+    a[href*="twitter"]:hover {
+        text-decoration: underline;
+    }
+    img {
+        width: 12rem;
+        height: 12rem;
+        background: #c8c8c8;
+        margin-right: 2rem;
+        border-radius: 1.5rem;
+        object-fit: cover;
+    }
+    h1 ~ div {
+        display: flex;
+        gap: 0.5rem;
+        margin: 1rem 0;
+    }
+}

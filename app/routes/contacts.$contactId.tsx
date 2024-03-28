@@ -4,7 +4,8 @@ import { Form, useLoaderData, useFetcher } from "@remix-run/react";
 import { getContact, updateContact} from "~/data";
 import type { ContactRecord } from "~/data";
 import invariant from "tiny-invariant";
-import {Button} from "@mantine/core";
+import {Box, Button} from "@mantine/core";
+import styles from "./contacts.Module.css"; 
 
 
 export const loader = async ({
@@ -34,7 +35,7 @@ export default function Contact() {
     const { contact } = useLoaderData<typeof loader>();
 
     return (
-        <div id="contact">
+        <div className={styles.contact}>
             <div>
                 <img
                     alt={`${contact.first} ${contact.last} avatar`}
@@ -43,7 +44,7 @@ export default function Contact() {
                 />
             </div>
 
-            <div>
+            <Box>
                 <h1>
                     {contact.first || contact.last ? (
                         <>
@@ -87,7 +88,7 @@ export default function Contact() {
                         <Button type="submit">Delete</Button>
                     </Form>
                 </div>
-            </div>
+            </Box>
         </div>
     );
 }
