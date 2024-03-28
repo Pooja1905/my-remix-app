@@ -17,7 +17,18 @@ import {
 import {getContacts, createEmptyContact} from "~/data";
 
 import type {LinksFunction} from "@remix-run/node";
-import {ColorSchemeScript, MantineProvider, Button, createTheme, AppShell, Text, Input, Container, NavLink} from '@mantine/core';
+import {
+    ColorSchemeScript,
+    MantineProvider,
+    Button,
+    createTheme,
+    AppShell,
+    Text,
+    Input,
+    Container,
+    NavLink,
+    Anchor
+} from '@mantine/core';
 import {useEffect, useState} from "react";
 import {useDisclosure} from "@mantine/hooks";
 
@@ -69,6 +80,7 @@ export default function App() {
     }, [q]);
 
 
+    // @ts-ignore
     return (
         <html lang="en">
         <head>
@@ -128,7 +140,7 @@ export default function App() {
                                 <ul>
                                     {contacts.map((contact) => (
                                         <li key={contact.id}>
-                                            <NavLink
+                                            <Anchor
                                                 className={({isActive, isPending}) =>
                                                     isActive
                                                         ? "active"
@@ -136,7 +148,7 @@ export default function App() {
                                                             ? "pending"
                                                             : ""
                                                 }
-                                                to={`contacts/${contact.id}`}
+                                                href={`contacts/${contact.id}`}
                                             >
                                                 {contact.first || contact.last ? (
                                                     <>
@@ -148,7 +160,7 @@ export default function App() {
                                                 {contact.favorite ? (
                                                     <span>★</span>
                                                 ) : null}
-                                            </NavLink>
+                                            </Anchor>
                                         </li>
                                     ))}
                                 </ul>
