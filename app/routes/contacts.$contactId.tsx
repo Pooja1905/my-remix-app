@@ -5,7 +5,7 @@ import { getContact, updateContact} from "~/data";
 import type { ContactRecord } from "~/data";
 import invariant from "tiny-invariant";
 import {Box, Button} from "@mantine/core";
-import styles from "./contacts.Module.css"; 
+import styles from "./contacts.module.css"; 
 
 
 export const loader = async ({
